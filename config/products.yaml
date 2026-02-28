@@ -1,0 +1,71 @@
+products:
+  - key: ai_prompts_side_hustles
+    title: "500 AI Prompts for Side Hustles & Online Income"
+    subtitle: "The Ultimate Prompt Library to Make Money with AI in 2026"
+    price_usd: 19
+    type: prompt_pack
+    niche: "AI tools and making money online"
+    target_audience: "entrepreneurs, freelancers, content creators, side hustlers"
+    description: >
+      A curated collection of 500 battle-tested AI prompts organized across 10 income
+      categories. From freelancing to content creation, e-commerce to consulting —
+      every prompt is designed to save you hours and multiply your output.
+    cover_style: "modern dark tech aesthetic, electric blue and gold gradient, bold typography, money and AI symbols"
+    tags: [AI, "side hustle", ChatGPT, prompts, "make money", "passive income"]
+
+  - key: youtube_automation_blueprint
+    title: "YouTube Automation Blueprint"
+    subtitle: "Build a Faceless Channel That Earns While You Sleep"
+    price_usd: 49
+    type: guide
+    niche: "YouTube automation and passive income"
+    target_audience: "aspiring YouTubers, digital entrepreneurs, passive income seekers"
+    description: >
+      The exact step-by-step system to build, automate, and monetize a faceless YouTube
+      channel using AI tools. Covers script generation, voiceover, visuals, video compilation,
+      and auto-upload — all fully automated with free and low-cost tools.
+    cover_style: "YouTube red and dark background, play button icon, automation gears, rising income chart"
+    tags: [YouTube, automation, "passive income", AI, "faceless channel", monetization]
+
+  - key: crypto_trading_prompts
+    title: "ChatGPT Prompts for Crypto Traders"
+    subtitle: "200+ Prompts for Market Analysis, Risk Management & DeFi Strategy"
+    price_usd: 14
+    type: prompt_pack
+    niche: "crypto trading and DeFi"
+    target_audience: "crypto traders, DeFi users, blockchain enthusiasts"
+    description: >
+      200+ specialized prompts for cryptocurrency trading — from technical analysis to
+      risk management, DeFi research to portfolio strategy. Use ChatGPT as your personal
+      crypto analyst available 24/7.
+    cover_style: "crypto blockchain aesthetic, dark background with Bitcoin Ethereum symbols, green trading charts"
+    tags: [crypto, trading, ChatGPT, prompts, DeFi, Bitcoin]
+
+  - key: african_creator_guide
+    title: "The African Creator's Guide to Making Money Online"
+    subtitle: "Proven Strategies for Nigerian & African Digital Entrepreneurs"
+    price_usd: 29
+    type: guide
+    niche: "making money online for African creators"
+    target_audience: "Nigerian entrepreneurs, African content creators, digital side hustlers"
+    description: >
+      A practical playbook written specifically for African creators — covering YouTube
+      monetization, digital products, freelancing, crypto, and AI side hustles. All
+      strategies work with African payment systems including Selar, Paystack, Flutterwave,
+      and crypto.
+    cover_style: "vibrant African patterns, green gold black color scheme, map of Africa, digital devices overlay"
+    tags: [Nigeria, Africa, "make money online", "creator economy", "digital products", Naira]
+
+  - key: ai_tools_cheatsheet
+    title: "AI Tools Cheat Sheet 2026"
+    subtitle: "100 Best AI Tools by Use Case — With Pricing & Direct Links"
+    price_usd: 9
+    type: cheatsheet
+    niche: "AI tools and productivity"
+    target_audience: "entrepreneurs, marketers, content creators, business owners"
+    description: >
+      The definitive one-stop reference for the 100 best AI tools in 2026, organized
+      by category. Each entry includes what it does, who it's for, pricing tier, and
+      a direct link. Stop googling — start doing.
+    cover_style: "clean minimal tech design, white and electric blue, AI circuit patterns, tool icons grid"
+    tags: ["AI tools", "2026", ChatGPT, productivity, cheatsheet, reference]

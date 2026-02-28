@@ -1,0 +1,11 @@
+.env
+__pycache__/
+*.pyc
+*.pyo
+output/*.pdf
+output/*.png
+output/*.jpg
+*.pkl
+.DS_Store
+node_modules/
+.playwright/
