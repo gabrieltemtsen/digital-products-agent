@@ -2,7 +2,7 @@ products:
   - key: ai_prompts_side_hustles
     title: "500 AI Prompts for Side Hustles & Online Income"
     subtitle: "The Ultimate Prompt Library to Make Money with AI in 2026"
-    price_usd: 19
+    price_usd: 9
     type: prompt_pack
     niche: "AI tools and making money online"
     target_audience: "entrepreneurs, freelancers, content creators, side hustlers"
@@ -16,7 +16,7 @@ products:
   - key: youtube_automation_blueprint
     title: "YouTube Automation Blueprint"
     subtitle: "Build a Faceless Channel That Earns While You Sleep"
-    price_usd: 49
+    price_usd: 24
     type: guide
     niche: "YouTube automation and passive income"
     target_audience: "aspiring YouTubers, digital entrepreneurs, passive income seekers"
@@ -30,7 +30,7 @@ products:
   - key: crypto_trading_prompts
     title: "ChatGPT Prompts for Crypto Traders"
     subtitle: "200+ Prompts for Market Analysis, Risk Management & DeFi Strategy"
-    price_usd: 14
+    price_usd: 7
     type: prompt_pack
     niche: "crypto trading and DeFi"
     target_audience: "crypto traders, DeFi users, blockchain enthusiasts"
@@ -44,7 +44,7 @@ products:
   - key: african_creator_guide
     title: "The African Creator's Guide to Making Money Online"
     subtitle: "Proven Strategies for Nigerian & African Digital Entrepreneurs"
-    price_usd: 29
+    price_usd: 14
     type: guide
     niche: "making money online for African creators"
     target_audience: "Nigerian entrepreneurs, African content creators, digital side hustlers"
@@ -59,7 +59,7 @@ products:
   - key: ai_tools_cheatsheet
     title: "AI Tools Cheat Sheet 2026"
     subtitle: "100 Best AI Tools by Use Case — With Pricing & Direct Links"
-    price_usd: 9
+    price_usd: 4
     type: cheatsheet
     niche: "AI tools and productivity"
     target_audience: "entrepreneurs, marketers, content creators, business owners"
