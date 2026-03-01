@@ -4,6 +4,7 @@ based on product definition from products.yaml.
 """
 
 import json
+import json_repair
 import logging
 import os
 import time
@@ -166,11 +167,11 @@ class ProductGenerator:
                     raw = raw.split("```")[1]
                     if raw.startswith("json"):
                         raw = raw[4:]
-                content = json.loads(raw)
+                content = json_repair.loads(raw)
                 logger.info(f"✅ Content generated — {len(str(content))} chars")
                 return content
 
-            except (json.JSONDecodeError, Exception) as e:
+            except Exception as e:
                 logger.warning(f"Attempt {attempt + 1} failed: {e}")
                 if attempt < 2:
                     time.sleep(3)

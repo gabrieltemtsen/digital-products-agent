@@ -136,7 +136,7 @@ class ProductPDF(FPDF):
         self.set_font("Helvetica", "", 10)
         self.set_text_color(*CLR_TEXT)
         self.set_x(20 + indent)
-        self.cell(4, 6, "•")
+        self.cell(4, 6, "-")
         self.multi_cell(0, 6, text.strip())
 
     def _callout_box(self, text: str):
@@ -145,7 +145,7 @@ class ProductPDF(FPDF):
         self.set_line_width(0.5)
         self.set_font("Helvetica", "I", 10)
         self.set_text_color(*CLR_ACCENT)
-        self.multi_cell(0, 7, f"  💡 {text.strip()}", border=1, fill=True)
+        self.multi_cell(0, 7, f"  Tip: {text.strip()}", border=1, fill=True)
         self.ln(3)
 
     def _prompt_box(self, number: int, title: str, prompt_text: str):
@@ -285,8 +285,30 @@ RENDERERS = {
 }
 
 
+def _sanitize_data(data):
+    if isinstance(data, dict):
+        return {k: _sanitize_data(v) for k, v in data.items()}
+    elif isinstance(data, list):
+        return [_sanitize_data(v) for v in data]
+    elif isinstance(data, str):
+        replacements = {
+            '•': '-', '—': '-', '–': '-',
+            '“': '"', '”': '"', "‘": "'", "’": "'",
+            '…': '...', '✅': '[x]', '💡': 'Tip:',
+            '™': '(TM)', '®': '(R)', '©': '(C)',
+            '\u200b': '', '\u2028': '\n'
+        }
+        for k, v in replacements.items():
+            data = data.replace(k, v)
+        return data.encode("latin-1", "ignore").decode("latin-1")
+    return data
+
+
 def generate_pdf(product: dict, content: dict, cover_image_path: str | None, output_dir: str = "./output") -> str:
     """Generate a PDF for the product. Returns the path to the PDF."""
+    content = _sanitize_data(content)
+    product = _sanitize_data(product)
+
     os.makedirs(output_dir, exist_ok=True)
     out_path = os.path.join(output_dir, f"{product['key']}.pdf")
 

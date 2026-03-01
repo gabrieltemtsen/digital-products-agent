@@ -26,7 +26,7 @@ class SelarUploader(BasePlatformUploader):
         logger.info(f"[Selar] Uploading: {title}")
 
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+            browser = p.chromium.launch(headless=False, args=["--no-sandbox", "--disable-blink-features=AutomationControlled"])
             ctx = browser.new_context(viewport={"width": 1280, "height": 900})
             page = ctx.new_page()
 
@@ -34,8 +34,8 @@ class SelarUploader(BasePlatformUploader):
                 # ── Login ──────────────────────────────────────────────
                 page.goto("https://selar.co/login", wait_until="domcontentloaded")
                 time.sleep(2)
-                page.fill('input[type="email"], input[name="email"]', self.email)
-                page.fill('input[type="password"], input[name="password"]', self.password)
+                page.locator('input[type="email"], input[name="email"], input[name="username"], input[type="text"]').first.fill(self.email)
+                page.locator('input[type="password"], input[name="password"]').first.fill(self.password)
                 page.click('button[type="submit"]')
                 page.wait_for_url("**/dashboard**", timeout=20000)
                 logger.info("[Selar] Logged in ✓")
@@ -56,7 +56,7 @@ class SelarUploader(BasePlatformUploader):
                     pass
 
                 # Product title
-                page.fill('input[placeholder*="title" i], input[name*="title" i]', title)
+                page.locator('input[placeholder*="name" i], input[name*="name" i], input[placeholder*="title" i], input[name*="title" i]').first.fill(title, timeout=60000)
 
                 # Description
                 try:

@@ -26,7 +26,7 @@ class PayhipUploader(BasePlatformUploader):
         logger.info(f"[Payhip] Uploading: {title}")
 
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+            browser = p.chromium.launch(headless=False, args=["--no-sandbox", "--disable-blink-features=AutomationControlled"])
             ctx = browser.new_context(viewport={"width": 1280, "height": 900})
             page = ctx.new_page()
 
@@ -34,10 +34,10 @@ class PayhipUploader(BasePlatformUploader):
                 # ── Login ──────────────────────────────────────────────
                 page.goto("https://payhip.com/login", wait_until="domcontentloaded")
                 time.sleep(2)
-                page.fill('input[name="email"], input[type="email"]', self.email)
-                page.fill('input[name="password"], input[type="password"]', self.password)
-                page.click('button[type="submit"], input[type="submit"]')
-                page.wait_for_url("**/home**", timeout=20000)
+                page.locator('input[name="email"], input[type="email"]').first.fill(self.email, timeout=60000)
+                page.locator('input[name="password"], input[type="password"]').first.fill(self.password)
+                page.locator('button[type="submit"], input[type="submit"], button:has-text("Login")').first.click()
+                page.wait_for_url("**/home**", timeout=30000)
                 logger.info("[Payhip] Logged in ✓")
 
                 # ── Add a digital download ─────────────────────────────

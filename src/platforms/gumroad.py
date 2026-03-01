@@ -26,17 +26,17 @@ class GumroadUploader(BasePlatformUploader):
         logger.info(f"[Gumroad] Uploading: {title}")
 
         with sync_playwright() as p:
-            browser = p.chromium.launch(headless=True, args=["--no-sandbox"])
+            browser = p.chromium.launch(headless=False, args=["--no-sandbox", "--disable-blink-features=AutomationControlled"])
             ctx = browser.new_context(viewport={"width": 1280, "height": 900})
             page = ctx.new_page()
 
             try:
                 # ── Login ──────────────────────────────────────────────
                 page.goto("https://app.gumroad.com/login", wait_until="domcontentloaded")
-                page.fill('input[name="email"]', self.email)
-                page.fill('input[name="password"]', self.password)
-                page.click('button[type="submit"]')
-                page.wait_for_url("**/dashboard**", timeout=15000)
+                page.locator('input[type="email"], input[name="email"], #email').first.fill(self.email, timeout=60000)
+                page.locator('input[type="password"], input[name="password"], #password').first.fill(self.password)
+                page.locator('button[type="submit"], button:has-text("Login")').first.click()
+                page.wait_for_url("**/dashboard**", timeout=45000)
                 logger.info("[Gumroad] Logged in ✓")
 
                 # ── New product ────────────────────────────────────────

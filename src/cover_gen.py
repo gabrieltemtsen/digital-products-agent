@@ -37,7 +37,7 @@ def _hf_cover(product: dict, out_path: str, token: str) -> str | None:
         f"Aspect ratio 16:9 landscape for ebook cover."
     )
 
-    api_url = "https://api-inference.huggingface.co/models/black-forest-labs/FLUX.1-schnell"
+    api_url = "https://router.huggingface.co/hf-inference/models/black-forest-labs/FLUX.1-schnell"
     headers = {"Authorization": f"Bearer {token}"}
     payload = {"inputs": prompt, "parameters": {"width": 832, "height": 480}}
 
